@@ -39,6 +39,9 @@ map <leader>r <Action>(Run)
 " mapping to show cade actions
 nnoremap <leader>ca :action ShowIntentionActions<CR>
 
+" åpne copilot chat
+nnoremap <leader>cp :action copilot.chat.show<CR>
+
 " open nerdtree
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
