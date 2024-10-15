@@ -30,6 +30,9 @@ map Q gq
 " Setter leader som mellomrom
 let mapleader = ' '
 
+" Fjerner standard funksjon for mellomrom
+map <Space> <Nop>
+
 " map leader + r to Run code
 map <leader>r <Action>(Run)
 
