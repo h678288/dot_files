@@ -36,6 +36,7 @@ map <Space> <Nop>
 " map leader + r to Run code
 map <leader>r :action Run<CR>
 map <leader>rc :action ChooseRunConfiguration<CR>
+map <leader>rk :action Stop<CR>
 
 " mapping to show code actions
 nnoremap <leader>ca :action ShowIntentionActions<CR>
@@ -48,7 +49,6 @@ nnoremap <leader>cp :action copilot.chat.show<CR>
 
 " show hover info
 map <leader>sh :action ShowHoverInfo<CR>
-
 
 " open nerdtree
 nnoremap <leader>t :NERDTreeToggle<CR>
