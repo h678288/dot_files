@@ -34,16 +34,21 @@ let mapleader = ' '
 map <Space> <Nop>
 
 " map leader + r to Run code
-map <leader>r <Action>(Run)
+map <leader>r :action Run<CR>
+map <leader>rc :action ChooseRunConfiguration<CR>
 
-" mapping to show cade actions
+" mapping to show code actions
 nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+" generate
+nnoremap <leader>g :action Generate<CR>
 
 " åpne copilot chat
 nnoremap <leader>cp :action copilot.chat.show<CR>
 
 " show hover info
 map <leader>sh :action ShowHoverInfo<CR>
+
 
 " open nerdtree
 nnoremap <leader>t :NERDTreeToggle<CR>
