@@ -42,6 +42,9 @@ nnoremap <leader>ca :action ShowIntentionActions<CR>
 " åpne copilot chat
 nnoremap <leader>cp :action copilot.chat.show<CR>
 
+" show hover info
+map <leader>sh :action ShowHoverInfo<CR>
+
 " open nerdtree
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
