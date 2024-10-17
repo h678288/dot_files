@@ -33,10 +33,28 @@ let mapleader = ' '
 " Fjerner standard funksjon for mellomrom
 map <Space> <Nop>
 
-" map leader + r to Run code
-map <leader>r :action Run<CR>
+" sync clipboard
+set clipboard=unnamed,unnamedplus
+
+" jump between angle brackets
+set matchpairs+=<:>
+
+" highlight search
+set hlsearch
+
+" remove search highlight
+nnoremap <Esc> :nohlsearch<CR>
+
+" case insensitive search
+set ignorecase
+
+" enable case-sensitive search when a capital letter is used
+set smartcase
+
+" map leader + e to Run code
+map <leader>e :action Run<CR>
 map <leader>rc :action ChooseRunConfiguration<CR>
-map <leader>rk :action Stop<CR>
+map <leader>k :action Stop<CR>
 
 " mapping to show code actions
 nnoremap <leader>ca :action ShowIntentionActions<CR>
@@ -55,9 +73,16 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 
 " window management
-nnoremap <leader>v <C-w>v
-nnoremap <leader>h <C-w>s
-nnoremap <leader>xs :close<CR>
+nnoremap <leader>v <Action>(SplitVertically) 
+nnoremap <leader>h <Action>(SplitHorizontally)
+nnoremap <leader>xs <Action>(Unsplit)
+nnoremap <leader>xa <Action>(UnsplitAll)
+
+" jump between splits
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
 
 " buffer navigation
 nnoremap <Tab> :bnext<CR>
@@ -74,13 +99,49 @@ nnoremap <leader>z :action ToggleZenMode<CR>
 
 " finn filer
 nmap <leader>ff <action>(GotoFile)
+nmap <leader>fc <action>(GotoClass)
+nmap <leader>fs <action>(GotoSymbol)
+nmap <leader>fa <action>(GotoAction)
+nmap <leader>gd <action>(GotoFileDeclaration)
+nmap <leader>gy <action>(GotoTypeDeclaration)
+nmap <leader>gi <action>(GotoImplementation)
+
+" vis kilde / implementasjon
+nmap <leader>vs <action>(ViewSource)
+nmap <leader>im <action>(QuickImplementations)
+nmap <leader>td <action>(QuickTypeDefinition)
+
+" search / replace
+map <C-f> <action>(Find)
+map <C-r> <action>(Replace)
+
+" refactoring
+nmap <leader>rn <action>(RenameElement)
+nmap <leader>rr <action>(Refactorings.QuickListPopupAction)
+
+" surround
+map <leader>sw <action>(SurroundWith)
+
+" jump between errors
+map <leader>en <action>(GotoNextError)
+map <leader>ep <action>(GotoPreviousError)
+
+" formatting
+map <leader><leader> <action>(ReformatCode)
+
+" move lines / statements
+map <A-j> <action>(MoveLineDown)
+map <A-k> <action>(MoveLineUp)
+map <A-S-j> <action>(MoveStatementDown)
+map <A-S-k> <action>(MoveStatementUp)
 
 let g:highlightedyank_highlight_duration = '2000'
 
-" plugins
-Plug 'easymotion/vim-easymotion'
+" mine plugins
+" Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'tpope/vim-commentary'
 set which-key
-set quickscope
+" set quickscope
+set ideajoin
