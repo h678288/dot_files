@@ -43,7 +43,7 @@ set matchpairs+=<:>
 set hlsearch
 
 " remove search highlight
-nnoremap <Esc> :nohlsearch<CR>
+map <Esc> :nohlsearch<CR>
 
 " case insensitive search
 set ignorecase
@@ -65,6 +65,15 @@ nnoremap <leader>g :action Generate<CR>
 " åpne copilot chat
 nnoremap <leader>cp :action copilot.chat.show<CR>
 
+" open terminal
+nnoremap <leader>ot :action ActivateTerminalToolWindow<CR>
+
+" open services
+nnoremap <leader>os :action ActivateServicesToolWindow<CR>
+
+" open maven
+nnoremap <leader>om :action ActivateMavenToolWindow<CR>
+
 " show hover info
 map <leader>sh :action ShowHoverInfo<CR>
 
@@ -73,7 +82,7 @@ nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 
 " window management
-nnoremap <leader>v <Action>(SplitVertically) 
+nnoremap <leader>v <Action>(SplitVertically)
 nnoremap <leader>h <Action>(SplitHorizontally)
 nnoremap <leader>xs <Action>(Unsplit)
 nnoremap <leader>xa <Action>(UnsplitAll)
@@ -83,6 +92,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
+
+" center after code jump
+map n nzzzv
+map N Nzzzv
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
 
 " buffer navigation
 nnoremap <Tab> :bnext<CR>
@@ -113,7 +128,7 @@ nmap <leader>td <action>(QuickTypeDefinition)
 
 " search / replace
 map <C-f> <action>(Find)
-map <C-r> <action>(Replace)
+" map <C-r> <action>(Replace)
 
 " refactoring
 nmap <leader>rn <action>(RenameElement)
