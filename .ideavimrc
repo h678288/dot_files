@@ -43,7 +43,7 @@ set matchpairs+=<:>
 set hlsearch
 
 " remove search highlight
-map <Esc> :nohlsearch<CR>
+nmap <Esc> :nohlsearch<CR>
 
 " case insensitive search
 set ignorecase
@@ -81,11 +81,10 @@ map <leader>sh :action ShowHoverInfo<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 
-" window management
-nnoremap <leader>v <Action>(SplitVertically)
-nnoremap <leader>h <Action>(SplitHorizontally)
-nnoremap <leader>xs <Action>(Unsplit)
-nnoremap <leader>xa <Action>(UnsplitAll)
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>h :action SplitHorizontally<CR>
+nnoremap <leader>xs :action CloseContent<CR>:action Unsplit<CR>
+nnoremap <leader>xa :action UnsplitAll<CR>
 
 " jump between splits
 map <C-j> <C-w>j
